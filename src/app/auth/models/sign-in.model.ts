@@ -3,6 +3,12 @@ export interface SignInContext {
     password: string;
 };
 
+export interface SignUpContext {
+    userId: string;
+    name: string;
+    confirmPassword: string;
+};
+
 export interface SignInComponentRes {
     authenticatedUser: string;
     authenticated: boolean;

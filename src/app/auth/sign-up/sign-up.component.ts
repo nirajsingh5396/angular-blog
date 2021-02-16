@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { SignUpContext } from '../models/sign-in.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,7 +10,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  
+
   authSignupForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -29,7 +30,23 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  authSignUPFormSubmission(){
+  authSignUPFormSubmission() {
+    if (!this.authSignupForm.valid) {
+      return;
+    }
+    const signUpFormValue = this.authSignupForm.value;
+    delete signUpFormValue.password;
+    const signUpForReq = signUpFormValue as SignUpContext;
+    console.log(signUpForReq);
+  }
+
+  getErrorMessageForConfirmPassword() {
+    if (this.authSignupForm.controls.confirmPassword.hasError('required')) {
+      return 'Confirm password is required';
+    } if (this.authSignupForm.controls.confirmPassword.hasError('notSame')) {
+      return 'Password and confirm password does not match';
+    }
 
   }
+
 }

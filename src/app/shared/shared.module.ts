@@ -9,11 +9,13 @@ import { NoDataComponent } from './components/no-data/no-data.component';
 import { MaterialModule } from './modules/material-module';
 
 import { NotificationService } from './services/notification.service';
+import { ConfirmEqualValidatorDirective } from './helpers/confirmPasswordValidation';
 
 
 @NgModule({
   declarations: [
     NoDataComponent,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     CommonModule,
@@ -30,6 +32,7 @@ import { NotificationService } from './services/notification.service';
     HttpClientModule,
     RouterModule,
     NoDataComponent,
+    ConfirmEqualValidatorDirective,
     MaterialModule,
   ],
   providers: [NotificationService]
