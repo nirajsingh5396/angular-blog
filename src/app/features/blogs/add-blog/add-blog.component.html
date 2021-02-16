@@ -1,14 +1,14 @@
 <div class="add-blog-container">
     <mat-card>
         <mat-card-header>
-            <mat-card-title>Create your blog!</mat-card-title>
+            <mat-card-title>{{!!title ? 'Update your blog!': 'Create your blog!'}}</mat-card-title>
         </mat-card-header>
         <form [formGroup]="addBlogForm" (ngSubmit)="addBlogSubmission()">
 
             <mat-form-field appearance="outline">
                 <mat-label>Enter your title</mat-label>
-                <input matInput placeholder="name" formControlName="title">
-                <mat-error *ngIf="!addBlogForm.get('title').valid">Title is required</mat-error>
+                <input matInput [readonly]="!!title" placeholder="Title" formControlName="title">
+                <mat-error *ngIf="!addBlogForm.get('title').valid">{{getTitleErrormsg()}}</mat-error>
             </mat-form-field>
             <br>
 
@@ -26,7 +26,8 @@
             <br>
 
             <div class="mt-20">
-                <button class="mr-10" mat-stroked-button color="primary" type="submit">Create</button>
+                <button class="mr-10" mat-stroked-button color="primary" type="submit">{{!!title ? 'Update':
+                    'Create'}}</button>
                 <button mat-stroked-button color="primary" type="button" routerLink="/blogs/list">Cancel</button>
             </div>
         </form>
