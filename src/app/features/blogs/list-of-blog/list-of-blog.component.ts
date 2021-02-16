@@ -45,7 +45,7 @@ export class ListOfBlogComponent implements OnInit {
     dialogRef.afterClosed().subscribe((res) => {
       if (res.state === true) {
         this.blogService.deleteBlog(title).subscribe(res => {
-          this.notify.showNotification('Blog has been delte successfully!', 'top', 'error');
+          this.notify.showNotification('Blog has been deleted successfully!', 'top', 'error');
           this.getBlogs();
         })
       }

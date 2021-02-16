@@ -8,7 +8,7 @@ import { Blogs } from './models/blogs.model';
 })
 export class BlogsService {
 
-  blogs: Blogs[] = [{title: 'demo', subTitle: 'demo data is going', desc: 'addeefd sdemo doha  rfdf  s667   fhfggg  fff'}];
+  blogs: Blogs[] = [];
 
   getBlogs(): Observable<Blogs[]> {
     return of(this.blogs);

@@ -1,1 +1,34 @@
-<p>add-blog works!</p>
+<div class="add-blog-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Create your blog!</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="addBlogForm" (ngSubmit)="addBlogSubmission()">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your title</mat-label>
+                <input matInput placeholder="name" formControlName="title">
+                <mat-error *ngIf="!addBlogForm.get('title').valid">Title is required</mat-error>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your subTitle</mat-label>
+                <input matInput placeholder="subTitle" formControlName="subTitle">
+                <mat-error *ngIf="!addBlogForm.get('subTitle').valid">subTitle is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your Description</mat-label>
+                <input matInput placeholder="Description" formControlName="desc">
+                <mat-error *ngIf="!addBlogForm.get('desc').valid">Description is required</mat-error>
+            </mat-form-field>
+            <br>
+
+            <div class="mt-20">
+                <button class="mr-10" mat-stroked-button color="primary" type="submit">Create</button>
+                <button mat-stroked-button color="primary" type="button" routerLink="/blogs/list">Cancel</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
