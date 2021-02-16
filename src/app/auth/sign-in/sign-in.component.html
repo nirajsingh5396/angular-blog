@@ -1,27 +1,24 @@
-<form [formGroup]="authSignInForm" (ngSubmit)="authSignFormSubmission()" class="align-center">
 
-  <ion-item>
-    <ion-label>
-      <strong>
-        Sign in here!
-      </strong>
-    </ion-label>
-  </ion-item>
+<div class="sign-in-container">
+<mat-card>
+  <form [formGroup]="authSignInForm" (ngSubmit)="authSignFormSubmission()">
 
-  <p class="error-message" *ngIf="isShowErrorMessage">{{errorMessage}}</p>
-
-  <ion-item>
-    <ion-label position="stacked">User ID</ion-label>
-    <ion-input type="text" placeholder="Enter user id" formControlName="userId"></ion-input>
-    <span *ngIf="formInputIsRequired('userId')" class="required">&#42;</span>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="stacked">Password</ion-label>
-    <ion-input type="password" placeholder="Enter password" formControlName="password"></ion-input>
-    <span *ngIf="formInputIsRequired('password')" class="required">&#42;</span>
-  </ion-item>
-
-  <ion-button type="submit" [disabled]="!authSignInForm.valid">Sign in</ion-button>
-
-</form>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your user id</mat-label>
+      <input matInput placeholder="user id" formControlName="userId" >
+      <mat-error *ngIf="!authSignInForm.get('userId').valid">User id is required</mat-error>
+    </mat-form-field>
+  <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your password</mat-label>
+      <input matInput type="password" placeholder="password" formControlName="password" >
+      <mat-error *ngIf="!authSignInForm.get('password').valid">password is required</mat-error>
+    </mat-form-field>
+  
+    <br>
+    <button mat-stroked-button color="primary" type="submit">Sign in</button>
+    <br>
+    <button mat-stroked-button color="primary" type="button">New user? Create an account.</button>
+  </form>
+</mat-card>
+</div>

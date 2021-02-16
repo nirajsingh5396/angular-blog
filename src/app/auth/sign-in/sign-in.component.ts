@@ -48,14 +48,6 @@ export class SignInComponent implements OnInit {
       });
   }
 
-  formInputIsRequired(formInput: string): boolean {
-    if (this.authSignInForm.controls[formInput]) {
-      if (this.authSignInForm.controls[formInput].hasError('required')) {
-        return true;
-      }
-    }
-    return false;
-  }
 
 
 }

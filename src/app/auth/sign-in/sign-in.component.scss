@@ -1,7 +1,14 @@
-.required , .error-message{
-    color: red;
-  }
 
-  .align-center{
-      text-align: center;
-  }
+
+.sign-in-container{
+   display: flex;
+   margin: 32px auto;
+   justify-content: center;
+   align-items: center;
+
+    mat-card{
+    width: 300px;
+    text-align: center;
+}
+
+}
