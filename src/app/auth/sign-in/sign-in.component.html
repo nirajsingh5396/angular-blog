@@ -17,9 +17,9 @@
         <input matInput type="password" placeholder="password" formControlName="password">
         <mat-error *ngIf="!authSignInForm.get('password').valid">password is required</mat-error>
       </mat-form-field>
-
       <br>
-      <button mat-stroked-button color="primary" type="submit">Sign in</button>
+      <button mat-stroked-button color="primary" type="submit" class="mr-10">Sign in</button>
+      <a color="primary" type="button" routerLink="/blogs/list">Forgot password?</a>
       <br>
       <button 
       class="mt-20"
