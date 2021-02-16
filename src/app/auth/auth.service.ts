@@ -49,6 +49,15 @@ export class AuthService {
     return of({ isUserExist: true });
   }
 
+  createNewPassword(newPassword: string, userId: string): Observable<any> {
+    const userFound = this.regsiteredUser.find(user => user.userId.trim() === userId.trim());
+    if (!userFound) {
+      return of({ passwordReset: false });
+    }
+    userFound.confirmPassword = newPassword;
+    return of({ passwordReset: true })
+  }
+
 
 
 }

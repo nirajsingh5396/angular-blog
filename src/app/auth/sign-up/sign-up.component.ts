@@ -41,7 +41,6 @@ export class SignUpComponent implements OnInit {
     const signUpForReq = signUpFormValue as SignUpContext;
     this.authService.signUp(signUpForReq)
       .subscribe((res) => {
-        console.log(res);
         if (res.isRegisteredUser) {
           this.notify.showNotification('User registered successfully!', 'top', 'success');
           this.router.navigate(['/auth/sign-in']);
