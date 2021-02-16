@@ -12,7 +12,7 @@ const routes: Routes = [
     component: BlogsComponent,
     children: [
       { path: '', redirectTo: 'users', pathMatch: 'full' },
-      { path: 'blogs', component: ListOfBlogComponent },
+      { path: 'list', component: ListOfBlogComponent },
       { path: 'create', component: AddBlogComponent },
       { path: 'edit/:id', component: EditBlogComponent },
       { path: ':id', component: BlogsComponent },
