@@ -40,4 +40,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![Screenshot from 2021-02-17 02-49-34](https://user-images.githubusercontent.com/44340039/108122815-e275ae80-70ca-11eb-9119-cf7a6957ad18.png)
 ![Screenshot from 2021-02-17 02-49-45](https://user-images.githubusercontent.com/44340039/108122818-e3a6db80-70ca-11eb-813d-7b4aeb472241.png)
 
+## forgot password screenshot
+![Screenshot from 2021-02-17 02-52-26](https://user-images.githubusercontent.com/44340039/108123084-557f2500-70cb-11eb-9b52-e71f297f2cb1.png)
+![Screenshot from 2021-02-17 02-52-37](https://user-images.githubusercontent.com/44340039/108123088-5748e880-70cb-11eb-82a1-9a415aa1dd37.png)
+![Screenshot from 2021-02-17 02-52-51](https://user-images.githubusercontent.com/44340039/108123092-587a1580-70cb-11eb-820f-adc6a8add6c2.png)
+![Screenshot from 2021-02-17 02-53-11](https://user-images.githubusercontent.com/44340039/108123095-5a43d900-70cb-11eb-9500-92678627e6a7.png)
 
