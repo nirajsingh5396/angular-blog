@@ -1,0 +1,29 @@
+.btn-margin{
+    margin: 13px;
+  }
+  
+  
+  table{
+    width: 100%;
+  }
+  
+  .hideContent {
+      padding: 11px 11px 8px 0px !important;
+      max-width: 130px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-decoration: underline;
+      color: #1a589b;
+      // cursor: pointer;
+    }
+  
+    .text-decoration{
+      text-decoration: underline;
+      color: blue;
+      cursor: pointer;
+    }
+  
+    .pointer-icon{
+      cursor: pointer;
+    }

@@ -10,12 +10,14 @@ import { MaterialModule } from './modules/material-module';
 
 import { NotificationService } from './services/notification.service';
 import { ConfirmEqualValidatorDirective } from './helpers/confirmPasswordValidation';
+import { ConfirmationAlertComponent } from './components/confirmation-alert/confirmation-alert.component';
 
 
 @NgModule({
   declarations: [
     NoDataComponent,
-    ConfirmEqualValidatorDirective
+    ConfirmEqualValidatorDirective,
+    ConfirmationAlertComponent
   ],
   imports: [
     CommonModule,
@@ -33,8 +35,10 @@ import { ConfirmEqualValidatorDirective } from './helpers/confirmPasswordValidat
     RouterModule,
     NoDataComponent,
     ConfirmEqualValidatorDirective,
+    ConfirmationAlertComponent,
     MaterialModule,
   ],
-  providers: [NotificationService]
+  providers: [NotificationService],
+  entryComponents: [ConfirmationAlertComponent]
 })
 export class SharedModule { }
