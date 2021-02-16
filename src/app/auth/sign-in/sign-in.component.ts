@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/shared/services/notification.service';
 import { AuthService } from '../auth.service';
 import { SignInContext } from '../models/sign-in.model';
 
@@ -18,7 +19,8 @@ export class SignInComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private notify: NotificationService
   ) { }
 
   ngOnInit() {
@@ -46,7 +48,7 @@ export class SignInComponent implements OnInit {
           this.isShowErrorMessage = true;
           this.errorMessage = signInContextRes.message;
         }
-      });
+      }, (err)=> this.notify.showNotification('Something went wrong', 'bottom', 'error'));
   }
 
 

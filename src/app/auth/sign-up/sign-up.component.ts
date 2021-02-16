@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/shared/services/notification.service';
 import { AuthService } from '../auth.service';
 import { SignUpContext } from '../models/sign-in.model';
 
@@ -15,7 +16,8 @@ export class SignUpComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private notify: NotificationService
   ) { }
   ngOnInit() {
     this.buildSignupForm();
@@ -37,7 +39,14 @@ export class SignUpComponent implements OnInit {
     const signUpFormValue = this.authSignupForm.value;
     delete signUpFormValue.password;
     const signUpForReq = signUpFormValue as SignUpContext;
-    console.log(signUpForReq);
+    this.authService.signUp(signUpForReq)
+      .subscribe((res) => {
+        console.log(res);
+        if (res.isRegisteredUser) {
+          this.notify.showNotification('User registered successfully!', 'top', 'success');
+          this.router.navigate(['/auth/sign-in']);
+        }
+      }, (err) => this.notify.showNotification('Something went wrong', 'bottom', 'error'));
   }
 
   getErrorMessageForConfirmPassword() {

@@ -8,3 +8,26 @@ body {
 .mt-20{
     margin-top: 20px !important;
 }
+
+.success{
+    background-color: #225792;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .error{
+    background-color: #871518;
+    color: #fff;
+  }
+  
+  .warning{
+    background-color: #e76c27;
+  
+    color: #fff;
+  }
+  
+  .mat-simple-snackbar{
+    justify-content: center !important;
+    font-family: inherit;
+    font-weight: 500;
+  }
