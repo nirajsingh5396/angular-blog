@@ -13,8 +13,6 @@ import { SignInContext } from '../models/sign-in.model';
 export class SignInComponent implements OnInit {
 
   authSignInForm: FormGroup;
-  isShowErrorMessage: boolean = false;
-  errorMessage: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,10 +41,9 @@ export class SignInComponent implements OnInit {
     this.authService.signIn(signnContext)
       .subscribe((signInContextRes) => {
         if (signInContextRes.authenticated) {
-          this.isShowErrorMessage = false;
+          this.router.navigate(['/blogs/list']);
         } else {
-          this.isShowErrorMessage = true;
-          this.errorMessage = signInContextRes.message;
+          this.notify.showNotification(signInContextRes.message, 'bottom', 'warning');
         }
       }, (err)=> this.notify.showNotification('Something went wrong', 'bottom', 'error'));
   }

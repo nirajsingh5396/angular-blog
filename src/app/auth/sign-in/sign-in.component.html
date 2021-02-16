@@ -2,7 +2,6 @@
   <mat-card>
     <mat-card-header >
       <mat-card-title>Sign in here!</mat-card-title>
-      <mat-card-subtitle *ngIf="isShowErrorMessage" class="error-color">{{errorMessage}}</mat-card-subtitle>
     </mat-card-header>
 
     <form [formGroup]="authSignInForm" (ngSubmit)="authSignFormSubmission()">

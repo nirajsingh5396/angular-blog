@@ -53,7 +53,7 @@
             <td mat-cell *matCellDef="let element">
                 <mat-icon class="pointer-icon" [routerLink]="['/blogs/edit', element.title]">edit
                 </mat-icon>
-                <mat-icon class="pointer-icon" (click)="onDeleteBlog(element.id)">delete
+                <mat-icon class="pointer-icon" (click)="onDeleteBlog(element.title)">delete
                 </mat-icon>
             </td>
         </ng-container>
