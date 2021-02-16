@@ -41,6 +41,7 @@ export class SignInComponent implements OnInit {
     this.authService.signIn(signnContext)
       .subscribe((signInContextRes) => {
         if (signInContextRes.authenticated) {
+          this.isShowErrorMessage = false;
         } else {
           this.isShowErrorMessage = true;
           this.errorMessage = signInContextRes.message;

@@ -1,1 +1,40 @@
-<p>sign-up works!</p>
+<div class="sign-up-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Create your account!</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="authSignupForm" (ngSubmit)="authSignUPFormSubmission()">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your name</mat-label>
+                <input matInput placeholder="name" formControlName="name">
+                <mat-error *ngIf="!authSignupForm.get('name').valid">name is required</mat-error>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your user id</mat-label>
+                <input matInput placeholder="user id" formControlName="userId">
+                <mat-error *ngIf="!authSignupForm.get('userId').valid">User id is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input matInput type="password" placeholder="password" formControlName="password">
+                <mat-error *ngIf="!authSignupForm.get('password').valid">password is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your confirm password</mat-label>
+                <input matInput type="password" placeholder="Confirm password" formControlName="confirmPassword">
+                <mat-error *ngIf="!authSignupForm.get('confirmPassword').valid">Confirm password is required</mat-error>
+            </mat-form-field>
+
+            <br>
+            <button mat-stroked-button color="primary" type="submit">Sign up</button>
+            <br>
+            <button mat-stroked-button color="primary" type="button" routerLink="/auth/sign-in">Existig user? Sign in
+                here!</button>
+        </form>
+    </mat-card>
+</div>
