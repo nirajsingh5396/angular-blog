@@ -41,4 +41,14 @@ export class AuthService {
   }
 
 
+  verifyUserByUserId(userId: string): Observable<any> {
+    const userFound = this.regsiteredUser.find(user => user.userId.trim() === userId.trim());
+    if (!userFound) {
+      return of({ isUserExist: false });
+    }
+    return of({ isUserExist: true });
+  }
+
+
+
 }
