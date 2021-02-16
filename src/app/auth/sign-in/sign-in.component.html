@@ -1,24 +1,31 @@
-
 <div class="sign-in-container">
-<mat-card>
-  <form [formGroup]="authSignInForm" (ngSubmit)="authSignFormSubmission()">
+  <mat-card>
+    <mat-card-header *ngIf="isShowErrorMessage">
+      <mat-card-title>{{errorMessage}}</mat-card-title>
+    </mat-card-header>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Enter your user id</mat-label>
-      <input matInput placeholder="user id" formControlName="userId" >
-      <mat-error *ngIf="!authSignInForm.get('userId').valid">User id is required</mat-error>
-    </mat-form-field>
-  <br>
-    <mat-form-field appearance="outline">
-      <mat-label>Enter your password</mat-label>
-      <input matInput type="password" placeholder="password" formControlName="password" >
-      <mat-error *ngIf="!authSignInForm.get('password').valid">password is required</mat-error>
-    </mat-form-field>
-  
-    <br>
-    <button mat-stroked-button color="primary" type="submit">Sign in</button>
-    <br>
-    <button mat-stroked-button color="primary" type="button">New user? Create an account.</button>
-  </form>
-</mat-card>
+    <form [formGroup]="authSignInForm" (ngSubmit)="authSignFormSubmission()">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your user id</mat-label>
+        <input matInput placeholder="user id" formControlName="userId">
+        <mat-error *ngIf="!authSignInForm.get('userId').valid">User id is required</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput type="password" placeholder="password" formControlName="password">
+        <mat-error *ngIf="!authSignInForm.get('password').valid">password is required</mat-error>
+      </mat-form-field>
+
+      <br>
+      <button mat-stroked-button color="primary" type="submit">Sign in</button>
+      <br>
+      <button 
+      mat-stroked-button color="primary" 
+      type="button"
+      routerLink="/auth/sign-up"
+      >New user? Create an account.</button>
+    </form>
+  </mat-card>
 </div>
